@@ -1,0 +1,6 @@
+webRoot: /opt/httpd
+webDir:
+- r23-new
+- r23-test
+archiveRoot: /opt/httpd/archive
+personalConfig: ./myconfig.yaml
