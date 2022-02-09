@@ -2,11 +2,16 @@
   "name": "ssh-jump",
   "version": "0.0.1",
   "description": "SSH direct connection and through optional bastion/jump host. It has embedded ssh-agent for bastion/jump connections.",
-  "main": "index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "test": "ts-mocha --paths -p test/tsconfig.json test/*.spec.ts",
     "start": "cross-env DEBUG=ssh,prompt npx ts-node -O '{\"module\":\"commonjs\"}' test/prompt/index.ts --configFile test/.ssh-jump/config.yaml",
-    "build": "microbundle"
+    "build": "tsdx build"
   },
   "repository": {
     "type": "git",
@@ -23,7 +28,7 @@
   "contributors": [
     {
       "name": "Denis Kalinin",
-      "email": "denis@itranga.com"
+      "email": "dk@itranga.com"
     }
   ],
   "author": "Denis Kalinin",
@@ -52,17 +57,18 @@
     "eslint": "^8.7.0",
     "inquirer": "^8.2.0",
     "is-valid-hostname": "^1.0.2",
-    "microbundle": "^0.14.2",
+    "js-yaml": "^4.1.0",
     "np": "^7.6.0",
     "ts-mocha": "^9.0.2",
     "ts-node": "^10.4.0",
+    "tsdx": "^0.14.1",
     "typescript": "^4.5.5",
     "yargs": "^16.2.0"
   },
   "dependencies": {
     "asn1": "^0.2.6",
     "bigint-buffer": "^1.1.5",
-    "js-yaml": "^4.1.0",
+    "crypto": "^1.0.1",
     "node-rsa": "^1.1.1",
     "ssh2": "^1.5.0"
   }

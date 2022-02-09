@@ -1,3 +1,11 @@
+target:
+  host:
+    hostname: secured.example.com
+    port: 22
+bastion:
+  host:
+    hostname: jump.example.com
+    port: 22
 webRoot: /opt/httpd
 webDir:
 - r23-new
